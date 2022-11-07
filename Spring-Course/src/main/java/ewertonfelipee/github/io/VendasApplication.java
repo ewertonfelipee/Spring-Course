@@ -15,6 +15,11 @@ public class VendasApplication {
     public String HelloWorld(){
         return "hello world";
     }
+
+    @GetMapping("/ola")
+    public String Ola(){
+        return "Ola";
+    }
     public static void main(String[] args) {
         SpringApplication.run(VendasApplication.class, args);
     }
