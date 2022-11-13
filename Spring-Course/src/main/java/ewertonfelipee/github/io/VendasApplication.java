@@ -1,5 +1,7 @@
 package ewertonfelipee.github.io;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,15 +13,15 @@ import javax.swing.*;
 @RestController
 public class VendasApplication {
 
+    @Autowired
+    @Qualifier("appName")
+    private String appName;
     @GetMapping("/hello")
     public String HelloWorld(){
-        return "hello world";
+        return appName;
     }
 
-    @GetMapping("/ola")
-    public String Ola(){
-        return "Ola";
-    }
+
     public static void main(String[] args) {
         SpringApplication.run(VendasApplication.class, args);
     }
